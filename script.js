@@ -1,6 +1,5 @@
 'use strict';
 window.onload = function () {
-
     // Initialize variable and value start
     let userInput;
     let randomNum = Math.round(Math.random() * (20 - 1) + 1);
@@ -15,22 +14,17 @@ window.onload = function () {
     let highScore = 0;
     totalRoundDis.innerHTML = (totalRound);
     highScoreDis.innerHTML = (highScore);
-
-
-    console.log(randomNum);
+    // console.log(randomNum);
     // Initialize variable and value end
 
     // Event Calling start
     checkBtn.addEventListener("click", checkValue);
     again.addEventListener("click", playAgain);
-
     // Event Calling end
-
 
     // all functions here start
     function checkValue() {
         if (totalRound > 0) {
-          
             totalRoundDis.innerHTML = (totalRound);
             userInput = (parseInt(userInputbox.value));
             if (isNaN(userInput) || userInput === 0) {
@@ -63,14 +57,6 @@ window.onload = function () {
         message.innerHTML = ("Start guessing...");
         displayNum.innerHTML = ("?");
         userInputbox.value="";
-
     }
-
-
-
     // all functions here end
-
-
-
-
 }
