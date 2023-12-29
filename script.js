@@ -30,7 +30,7 @@ window.onload = function () {
     // all functions here start
     function checkValue() {
         if (totalRound > 0) {
-            totalRound--;
+          
             totalRoundDis.innerHTML = (totalRound);
             userInput = (parseInt(userInputbox.value));
             if (isNaN(userInput) || userInput === 0) {
@@ -49,6 +49,7 @@ window.onload = function () {
                     message.innerHTML = ("📉 Too low!");
                 }
             }
+            totalRound--;
         } else {
             message.innerHTML = ("💥 You lost the game!");
         }
