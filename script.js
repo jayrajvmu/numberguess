@@ -19,7 +19,7 @@ window.onload = function () {
     checkBtn.addEventListener("click", checkValue);
     again.addEventListener("click", playAgain);
     randomNum=randomNumGen();
-    // console.log(randomNum);
+    console.log(randomNum);
 
     // Event Calling end
 
@@ -31,7 +31,7 @@ window.onload = function () {
     }
     function checkValue() {
         if (totalRound > 0) {
-            totalRoundDis.innerHTML = (totalRound);
+            totalRound--;
             userInput = (parseInt(userInputbox.value));
             if (isNaN(userInput) || userInput === 0) {
                 message.innerHTML = ("⛔️ No number!");
@@ -39,17 +39,26 @@ window.onload = function () {
                 message.innerHTML = ("📈 Too high!");
             } else if ((userInput > 0) && (userInput <= 20)) {
                 if (userInput === randomNum) {
+                    totalRound++;
                     displayNum.innerHTML = (userInput);
                     document.body.style.backgroundColor = "#60b347";
                     message.innerHTML = ("🎉 Correct Number!");
-                    highScoreDis.innerHTML = (totalRound);
+
+                    if(highScore==0){
+                        highScoreDis.innerHTML = (totalRound);
+                        highScore=totalRound;
+                    }else if(highScore<=totalRound){
+                        highScoreDis.innerHTML = (totalRound);
+                        highScore=totalRound;
+                    }
                 } else if (userInput > randomNum) {
                     message.innerHTML = ("📈 Too high!");
                 } else {
                     message.innerHTML = ("📉 Too low!");
                 }
             }
-            totalRound--;
+            totalRoundDis.innerHTML = (totalRound);
+
         } else {
             message.innerHTML = ("💥 You lost the game!");
         }
@@ -64,7 +73,7 @@ window.onload = function () {
         displayNum.innerHTML = ("?");
         userInputbox.value="";
         randomNum=randomNumGen();
-        // console.log(randomNum);
+        console.log(randomNum);
 
     }
     // all functions here end
