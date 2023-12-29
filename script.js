@@ -19,7 +19,7 @@ window.onload = function () {
     checkBtn.addEventListener("click", checkValue);
     again.addEventListener("click", playAgain);
     randomNum=randomNumGen();
-    console.log(randomNum);
+    // console.log(randomNum);
 
     // Event Calling end
 
@@ -73,7 +73,7 @@ window.onload = function () {
         displayNum.innerHTML = ("?");
         userInputbox.value="";
         randomNum=randomNumGen();
-        console.log(randomNum);
+        // console.log(randomNum);
 
     }
     // all functions here end
